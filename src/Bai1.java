@@ -10,14 +10,15 @@ public class Bai1 {
         String str = sc.nextLine();
         String str1 = str.toLowerCase(Locale.ROOT);
         int dem = 1;
-        for(int i = 0; i < str1.length() - 1; i++){
+        for(int i = 0; i < str1.length(); i++){
             if(str1.charAt(i) == ' '){
                 continue;
             }
-            for(int j = i + 1; j < str1.length(); j++){
+            for(int j = i + 1; j < str1.length() ; j++){
                 if(str1.charAt(i) == str1.charAt(j)){
                     dem++;
                     str1 = Remove(str1, j);
+                    j--;
                 }else{
                     continue;
                 }
@@ -25,6 +26,6 @@ public class Bai1 {
             System.out.println(str1.charAt(i) + ": " + dem);
             dem = 1;
         }
-        System.out.println(str1.charAt(str1.length() - 1) + ": 1");
+
     }
 }
